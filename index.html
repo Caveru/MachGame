@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>MatchGame</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>MatchGame</h1>
+</header>
+
+<!-- MENU SUPERIOR -->
+<nav class="nav">
+  <button onclick="showTab('home')">Home</button>
+  <button onclick="showTab('create')">Criar</button>
+  <button onclick="showTab('games')">Jogos</button>
+  <button onclick="showTab('account')">Conta</button>
+</nav>
+
+<!-- MENU LATERAL -->
+<div class="sidebar">
+  <h2>Categorias</h2>
+  <ul>
+    <li onclick="filterGames('futebol')">Futebol</li>
+    <li onclick="filterGames('volei')">Vôlei</li>
+    <li onclick="filterGames('futsal')">Fut Salão</li>
+    <li onclick="filterGames('futvolei')">Futevôlei</li>
+    <li onclick="filterGames('tenis')">Tênis</li>
+    <li onclick="filterGames('beachTennis')">Tênis de Praia</li>
+    <li onclick="filterGames('basquete')">Basquete</li>
+    <li onclick="filterGames('all')">Todos</li>
+  </ul>
+</div>
+
+<!-- HOME -->
+<section id="home" class="tab active">
+  <h2>Bem-vindo</h2>
+  <p>Encontre pessoas pra jogar na sua região</p>
+</section>
+
+<!-- CRIAR -->
+<section id="create" class="tab">
+  <h2>Criar partida</h2>
+
+  <form id="gameForm">
+    <input type="text" id="sport" placeholder="Esporte" required>
+    <input type="text" id="location" placeholder="Local" required>
+    <input type="datetime-local" id="date" required>
+    <input type="number" id="players" placeholder="Jogadores" required>
+
+    <button class="btn">Criar</button>
+  </form>
+</section>
+
+<!-- JOGOS -->
+<section id="games" class="tab">
+  <h2>Partidas disponíveis</h2>
+  <div id="gamesList"></div>
+</section>
+
+<!-- LOGIN -->
+<section id="account" class="tab">
+  <h2>Minha Conta</h2>
+
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Seu nome" required>
+    <button class="btn">Entrar / Cadastrar</button>
+  </form>
+
+  <p id="userInfo"></p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
