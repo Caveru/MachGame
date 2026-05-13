@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Annabel 1';
+    src: url('Annabel1.woff2') format('woff2'),
+        url('Annabel1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Annabel 1';
+    src: url('Annabel1.woff2') format('woff2'),
+        url('Annabel1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Capture it';
+    src: url('Captureit.woff2') format('woff2'),
+        url('Captureit.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'East Border';
+    src: url('EastBorder.woff2') format('woff2'),
+        url('EastBorder.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gimme Danger';
+    src: url('GimmeDanger.woff2') format('woff2'),
+        url('GimmeDanger.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Modern Prestige DEMO';
+    src: url('ModernPrestigeDEMO.woff2') format('woff2'),
+        url('ModernPrestigeDEMO.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+

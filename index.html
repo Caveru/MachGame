@@ -7,71 +7,75 @@
 </head>
 <body>
 
-<header class="header">
-  <h1>MatchGame</h1>
-</header>
+  <!-- MENU SUPERIOR -->
+  <nav class="nav">
+    <button>Home</button> 
+    <button>Criar</button>
+    <button>Jogos</button>
+    <button>Conta</button>
+  </nav>
 
-<!-- MENU SUPERIOR -->
-<nav class="nav">
-  <button onclick="showTab('home')">Home</button>
-  <button onclick="showTab('create')">Criar</button>
-  <button onclick="showTab('games')">Jogos</button>
-  <button onclick="showTab('account')">Conta</button>
-</nav>
+  <!-- HEADER -->
+  <header class="header">
+    <h1>MatchGame</h1>
+  </header>
 
-<!-- MENU LATERAL -->
-<div class="sidebar">
-  <h2>Categorias</h2>
-  <ul>
-    <li onclick="filterGames('futebol')">Futebol</li>
-    <li onclick="filterGames('volei')">Vôlei</li>
-    <li onclick="filterGames('futsal')">Fut Salão</li>
-    <li onclick="filterGames('futvolei')">Futevôlei</li>
-    <li onclick="filterGames('tenis')">Tênis</li>
-    <li onclick="filterGames('beachTennis')">Tênis de Praia</li>
-    <li onclick="filterGames('basquete')">Basquete</li>
-    <li onclick="filterGames('all')">Todos</li>
-  </ul>
-</div>
+  <!-- BOTÃO ☰ -->
+  <div class="menu-toggle">☰</div>
 
-<!-- HOME -->
-<section id="home" class="tab active">
-  <h2>Bem-vindo</h2>
-  <p>Encontre pessoas pra jogar na sua região</p>
-</section>
+  <!-- MENU LATERAL -->
+  <aside class="sidebar">
+    <h2>Categorias</h2>
+    <ul>
+      <li><a href="#home">Todos</a></li>
+      <li><a href="#futebol">Futebol</a></li>
+      <li><a href="#volei">Vôlei</a></li>
+      <li><a href="#futsal">Fut Salão</a></li>
+      <li><a href="#futevolei">Futevôlei</a></li>
+      <li><a href="#tenis">Tênis</a></li>
+      <li><a href="#basquete">Basquete</a></li>
+    </ul>
+  </aside>
 
-<!-- CRIAR -->
-<section id="create" class="tab">
-  <h2>Criar partida</h2>
+  <!-- CONTEÚDO -->
+  <main class="content">
 
-  <form id="gameForm">
-    <input type="text" id="sport" placeholder="Esporte" required>
-    <input type="text" id="location" placeholder="Local" required>
-    <input type="datetime-local" id="date" required>
-    <input type="number" id="players" placeholder="Jogadores" required>
+    <section id="home" class="tab active">
+      <h2>Bem-vindo</h2>
+      <p>Encontre pessoas pra jogar na sua região</p>
+    </section>
 
-    <button class="btn">Criar</button>
-  </form>
-</section>
+    <section id="futebol" class="tab">
+      <h2>⚽ Futebol</h2>
+      <p>Jogos disponíveis de futebol</p>
+    </section>
 
-<!-- JOGOS -->
-<section id="games" class="tab">
-  <h2>Partidas disponíveis</h2>
-  <div id="gamesList"></div>
-</section>
+    <section id="volei" class="tab">
+      <h2>🏐 Vôlei</h2>
+      <p>Jogos disponíveis de vôlei</p>
+    </section>
 
-<!-- LOGIN -->
-<section id="account" class="tab">
-  <h2>Minha Conta</h2>
+    <section id="futsal" class="tab">
+      <h2>🥅 Fut Salão</h2>
+      <p>Jogos de futsal</p>
+    </section>
 
-  <form id="loginForm">
-    <input type="text" id="username" placeholder="Seu nome" required>
-    <button class="btn">Entrar / Cadastrar</button>
-  </form>
+    <section id="futevolei" class="tab">
+      <h2>🏖️ Futevôlei</h2>
+      <p>Jogos na areia</p>
+    </section>
 
-  <p id="userInfo"></p>
-</section>
+    <section id="tenis" class="tab">
+      <h2>🎾 Tênis</h2>
+      <p>Jogos de tênis</p>
+    </section>
 
-<script src="script.js"></script>
+    <section id="basquete" class="tab">
+      <h2>🏀 Basquete</h2>
+      <p>Jogos de basquete</p>
+    </section>
+
+  </main>
+
 </body>
 </html>

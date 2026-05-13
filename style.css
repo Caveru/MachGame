@@ -1,147 +1,176 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-align: center;
-}
-
+/* RESET */
 body {
-  background: #f4f4f4;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e9e9e9;
 }
 
 /* HEADER */
+@font-face {
+  font-family: Annabel;
+  src: url(fonts/annabel/annabel\ 1.ttf);
+}
+@font-face {
+  font-family: Gimme;
+  src: url(fonts/gimme_danger/Gimme\ Danger.ttf);
+  font-weight: bold;
+}
 .header {
-  padding: 20px;
-  background: #111;
+  font-family: Gimme, sans-serif;
+  background: url("imagens/default.jpg") center/cover;
   color: white;
   text-align: center;
+  padding: 100px 0;
+  font-size: 15px;
+  position: relative;
+  transition: 0.4s;
 }
 
-/* NAV */
+/* ESCURECER FUNDO */
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.header h1 {
+  position: relative;
+  z-index: 1;
+}
+
+/* MENU SUPERIOR */
 .nav {
   display: flex;
   justify-content: space-around;
-  background: #333;
+  background: #2c2c2c;
 }
 
 .nav button {
-  flex: 1;
-  padding: 15px;
   background: none;
-  color: white;
   border: none;
+  color: white;
+  padding: 15px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-/* TABS */
+.nav button:hover {
+  background: blue;
+
+}
+
+/* BOTÃO ☰ */
+.menu-toggle {
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  background: #e0cfae;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  transform: translateX(-110%);
+  width: 200px;
+  background: #e0cfae;
+  padding: 20px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+/* MOSTRAR SIDEBAR */
+.menu-toggle:hover + .sidebar,
+.sidebar:hover {
+  transform: translateX(0);
+}
+
+/* SIDEBAR ITENS */
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 5px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  background: #cbb896;
+}
+
+/* CONTEÚDO */
+.content {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* ABAS */
 .tab {
   display: none;
-  padding: 20px;
 }
 
 .tab.active {
   display: block;
 }
 
-/* FORM */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 300px;
+.tab:target {
+  display: block;
 }
 
-input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+main:has(.tab:target) .tab.active {
+  display: none;
 }
 
-/* BOTÃO */
-.btn {
-  background: #00a86b;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+/* ========================= */
+/* 🎨 FUNDOS POR ESPORTE */
+/* ========================= */
+
+body:has(#home:target) .header {
+  background: url("imagens/todos2.png") center/cover;
+}
+body:has(#futebol:target) .header {
+  background: url("imagens/fut.jpeg") center/cover;
 }
 
-/* CARDS */
-#gamesList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+body:has(#volei:target) .header {
+  background: url("imagens/volei.jpeg") center/cover;
 }
 
-.game-card {
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: 0.2s;
-  position: relative;
+body:has(#futsal:target) .header {
+  background: url("imagens/futSalao.jpg") center/cover;
 }
 
-.game-card:hover {
-  transform: translateY(-5px);
+body:has(#futevolei:target) .header {
+  background: url("imagens/futevolei.jpeg") center/cover;
 }
 
-/* título */
-.game-card h3 {
-  margin-bottom: 10px;
+body:has(#tenis:target) .header {
+  background: url("imagens/tenis.jpeg") center/cover;
 }
 
-/* botão entrar */
-.enter-btn {
-  margin-top: 10px;
-  width: 100%;
-  background: #00a86b;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
+body:has(#praia:target) .header {
+  background: url("imagens/praia.jpeg") center/cover;
 }
 
-/* SIDEBAR */
-.sidebar {
-  position: fixed;
-  top: 120px;
-  left: -200px;
-  width: 200px;
-  background: #f5e6c8;
-  padding: 15px;
-  border-radius: 0 10px 10px 0;
-  transition: 0.3s;
-}
-
-.sidebar:hover {
-  left: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar li {
-  padding: 8px;
-  border-radius: 6px;
-}
-
-.sidebar li:hover {
-  background: rgba(0,0,0,0.1);
-}
-
-/* ALÇA */
-.sidebar::after {
-  content: "☰";
-  position: absolute;
-  right: -40px;
-  top: 20px;
-  background: #f5e6c8;
-  padding: 10px;
-  border-radius: 0 8px 8px 0;
+body:has(#basquete:target) .header {
+  background: url("imagens/basquete.jpeg") center/cover;
 }
